@@ -5,7 +5,7 @@ export const Navigation = () => {
         <nav className="NavBar">
             <ul>
                 <li><NavLink to="/">FORSIDE</NavLink></li>
-                <li><NavLink to="/products">FORESTILLINGER OG EVENTS</NavLink></li>
+                <li><NavLink to="/events">FORESTILLINGER OG EVENTS</NavLink></li>
                 <li><NavLink to="/actors">SKUESPILLERE</NavLink></li>
                 <li><NavLink to="/login">LOGIN</NavLink></li>
             </ul>

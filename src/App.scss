@@ -15,9 +15,105 @@ body {
 }
 
 
+.Highlight {
+  figure {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+
+.EventList{
+  display: grid;
+  grid-template-columns: 10% 20% 20% 50%;
+  border: 2px solid $first;
+  margin: 1vh;
+
+  figure {
+    margin: 0;
+  }
+
+  span{
+    height: fit-content;
+  }
+
+  img {
+    margin: 0;
+    padding: 0;
+    width: 80px;
+    height: 80px;
+    border: 2px solid $first;
+    float: left;
+  }
+
+  h3 {
+    color: $first;
+    font-family: $playfair;
+    font-size: 4vh;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  button {
+    margin: 0.5em;
+    padding: 1em;
+    color: white;
+    background-color: $third;
+    border: none;
+    float: right;
+
+    a {
+      color: white;
+    }
+  }
+
+  .buy {
+    color: white;
+    background-color: $first;
+  }
+}
+
+
+.LoginForm {
+  input {
+      padding: 2vh 0;
+      margin: 2vh 0;
+      width: 30%;
+      color: $third;
+      border: solid 1px $third;
+      border-radius: 0.3em;
+      box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  button {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 7%;
+      color: white;
+      background-color: $second;
+      padding: 1em;
+      border: 1px solid $first;
+      border-radius: 0.3em;
+      margin: 1em;
+      margin-left: 0;
+  }
+}
+
+
 .Footer {
   display: grid;
   grid-template-columns: auto auto auto;
+  bottom: 0;
+  // position: fixed;
+  // width: 60%;
 
   p {
     padding: 0;
