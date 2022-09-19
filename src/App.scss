@@ -1,0 +1,30 @@
+@import "Assets/scss/mixins.scss";
+@import "Assets/scss/vars.scss";
+
+* {
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  max-width: $container_width;
+  margin: 0 auto;
+  margin-bottom: 8rem;
+  color: black;
+  font-family: $font-family;
+}
+
+
+.Footer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  p {
+    padding: 0;
+    margin: 0;
+
+    span {
+      padding-top: 2vh;
+    }
+  }
+}
