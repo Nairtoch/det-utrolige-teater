@@ -16,7 +16,6 @@ export const EventListItem = props => {
                     <p>{props.data.stage_name}</p>
                     <p>{props.data.startdate} - {props.data.stopdate}</p>
                 </div>
-                <p><Link to={`/products/${props.group_id}/${props.data.id}`}></Link></p>
             </span>
             <span>
                 <button className='buy'>KØB BILLET</button>

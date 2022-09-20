@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react"
 
 export const Highlight = () => {
-    const [ highlight, setHighlight ] = useState({});
+    const [ highlight, setHighlight ] = useState([]);
 
     useEffect(() => {
         const getHighlight = async () => {
@@ -20,20 +20,17 @@ export const Highlight = () => {
 
     return (
         <section className="Highlight">
-            {highlight && highlight.map((items) => {
+            {highlight && highlight.map((item) => {
                 return (
-                    <figure key={items.id}>
-                        <figcaption>
-                            <article>
-                                <h3>{items.title}</h3>
-                                <p>{items.startdate} - {items.stopdate}</p>
-                                <p>{items.stage_name}</p>
-                                <p>{items.genre}</p>
-                            </article>
-                        </figcaption>
-                        <img src={items.image} alt="this show is on highlights right now!" />
+                    <figure key={item.id}>
+                        <article>
+                            <p>{item.stage_name}</p>
+                            <p>{item.startdate} - {item.stopdate}</p>
+                            <h3>{item.title}</h3>
+                            <p><span>{item.genre}</span></p>
+                        </article>
+                        <img src={item.image} alt="this show is on highlights right now!" />
                     </figure>
-
                 )
             })}
         </section>

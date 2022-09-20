@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-export const EventDetails = () => {
+export const HomeHighlights = () => {
     const { event_id } = useParams();
     const [ eventData, setEventData ] = useState([]);
 
@@ -10,7 +10,7 @@ export const EventDetails = () => {
         const getEventData = async () => {
             try {
                 const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/${event_id}`)
-                setEventData(result.data.item)
+                setEventData(result.data.items)
             }
             catch (err) {
                 console.error(err)
@@ -20,7 +20,7 @@ export const EventDetails = () => {
     }, [event_id])
 
     return (
-        <section className="EventDetails">
+        <section>
             {eventData ? (
                 <div>
                     {eventData.image && (
