@@ -50,6 +50,65 @@ body {
   }
 }
 
+.HomeHighlights {
+  margin-top: 8vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 2em;
+  padding-bottom: 10vh;
+
+  figure {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    border: 2px solid $second;
+  }
+
+  article {
+    text-align: right;
+    margin-right: 1em;
+
+    hr {
+      width: 100%;
+      margin-left: 0.5em;
+    }
+
+    h3 {
+      color: $first;
+      font-family: $playfair;
+      font-size: 2em;
+      font-weight: 300;
+    }
+  }
+
+  img {
+    width: 375px;
+    height: 300px;
+    border: 10px solid $second;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  button {
+    margin: 0.5em;
+    padding: 1em;
+    color: white;
+    background-color: $third;
+    border: none;
+    float: right;
+
+    a {
+      color: white;
+      font-weight: 600;
+    }
+  }
+
+  .buy {
+    color: white;
+    background-color: $first;
+  }
+}
+
 
 .EventList{
   display: grid;
@@ -143,13 +202,22 @@ body {
 .Footer {
   display: grid;
   grid-template-columns: auto auto auto;
+  position: relative;
   bottom: 0;
-  // position: fixed;
-  // width: 60%;
+  width: 1200px;
+  background-color: $third;
+  padding-bottom: 10vh;
+
+  h3 {
+    color: white;
+    padding-left: 3em;
+  }
 
   p {
     padding: 0;
     margin: 0;
+    padding-left: 3.5em;
+    color: white;
 
     span {
       padding-top: 2vh;

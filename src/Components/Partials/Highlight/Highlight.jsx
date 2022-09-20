@@ -26,6 +26,7 @@ export const Highlight = () => {
                         <article>
                             <p>{item.stage_name}</p>
                             <p>{item.startdate} - {item.stopdate}</p>
+                            <hr />
                             <h3>{item.title}</h3>
                             <p><span>{item.genre}</span></p>
                         </article>
