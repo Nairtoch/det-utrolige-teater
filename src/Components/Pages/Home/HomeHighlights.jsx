@@ -42,7 +42,9 @@ export const HomeHighlights = () => {
                     )
                 })}
             </section>
-            <section></section>
+            <section className="HomeHighlightsButton">
+                <button><Link to={`/events`}>SE ALLE FORESTILLINGER</Link></button>
+            </section>
         </>
     )
 }

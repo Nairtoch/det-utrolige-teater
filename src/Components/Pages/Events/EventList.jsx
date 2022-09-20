@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react"
-import { Layout } from "../../App/Layout/Layout";
+import { Highlight } from "../../Partials/Highlight/Highlight"
 import { EventListItem } from "./EventListItem";
 
 export const EventList = () => {
@@ -16,12 +16,14 @@ export const EventList = () => {
     }, [setEventList])
 
     return (
-        <Layout title="Oversigt" description="Her kan du se alle vores kommende forestillinger">
+        <section className="EventTitle">
+            <Highlight />
+            <h1>Oversigt</h1>
             {eventList && eventList.map(event => {
                 return (
                     <EventListItem key={event.id} data={event} />
                 )
             })}
-        </Layout>
+        </section>
     )
 }

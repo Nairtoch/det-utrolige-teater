@@ -22,16 +22,54 @@ body {
   margin-top: 5vh;
 
   li {
-    display: inline-block;
-    padding: 1vw;
+    padding-left: 2vw;
+    padding-right: 0;
+    float: right;
 
     a {
-        color: black;
+      color: black;
+
+      &:hover {
+        cursor: pointer;
+        color: $first;
+      }
+    }
+  }
+
+  .col-2 {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .SearchField {
+    float: right;
+    
+    input {
+      border: 0;
+      border-bottom: 1px solid gray;
+
+      &::placeholder {
+        text-transform: uppercase;
+      }
+    }
+
+    button {
+      align-items: center;
+      border: 0;
+      border-bottom: 1px solid gray;
+      background-color: white;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        opacity: 50%;
 
         &:hover {
           cursor: pointer;
-          color: $first;
+          opacity: 100%;
+          color: $second;
         }
+      }
     }
   }
 }
@@ -78,7 +116,7 @@ body {
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 2em;
-  padding-bottom: 10vh;
+  padding-bottom: 3vh;
 
   figure {
     display: grid;
@@ -133,6 +171,35 @@ body {
   .buy {
     color: white;
     background-color: $first;
+  }
+}
+
+.HomeHighlightsButton {
+  button {
+    padding: 1em;
+    color: white;
+    background-color: $second;
+    border: none;
+    float: right;
+    margin-bottom: 8vh;
+
+    a {
+      color: white;
+      font-weight: 600;
+    }
+  }
+}
+
+
+.EventTitle {
+  h1 {
+    color: $first;
+    font-family: $playfair;
+    font-size: 3em;
+    font-weight: 100;
+    text-align: right;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
 }
 
