@@ -5,6 +5,7 @@ import { EventDetails } from "../../Pages/Events/EventDetails"
 import { EventList } from "../../Pages/Events/EventList"
 import { Home } from "../../Pages/Home/Home"
 import { Login } from "../../Pages/Login/Login"
+import { Search } from "../../Pages/Search/Search"
 
 export const AppRouter = () => {
     return(
@@ -18,6 +19,7 @@ export const AppRouter = () => {
                 <Route index element={<ActorList />}></Route>
                 <Route path=":actor_id" element={<ActorDetails />}></Route>
             </Route>
+            <Route path="/search" element={<Search />}></Route>
             <Route path="/login" element={<Login />}></Route>
         </Routes>
     )

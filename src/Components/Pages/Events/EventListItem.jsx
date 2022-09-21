@@ -19,7 +19,7 @@ export const EventListItem = props => {
             </span>
             <span>
                 <button className='buy'>KØB BILLET</button>
-                <button className='read'><Link to={`/events/${props.data.id}`}>LÆS MERE</Link></button>
+                <button className='read'><Link to={`/events/${props.data.id}`}>LÆS MERE</Link></button> 
             </span>
         </div>
     )

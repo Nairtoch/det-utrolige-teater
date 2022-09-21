@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { ReviewList } from "../../Partials/Reviews/ReviewList";
+import { ReviewPost } from "../../Partials/Reviews/ReviewPost";
 
 export const EventDetails = () => {
     const { event_id } = useParams();
@@ -47,21 +49,26 @@ export const EventDetails = () => {
                     <p>{eventData.description}</p>
                     <p>Varighed ca. {eventData.duration_minutes} minutter</p>
                 </span>
+                <span>
+                    <h4>Medvirkende</h4>
+                </span>
                 <section className="Actors">
-                    <span>
-                        <h4>Medvirkende</h4>
-                    </span>
-                    {/* <span className="col-1">
-                        <figure>
-                            <img src={eventData.actors.image} alt="billede af et produkt" />
-                        </figure>
-                        <p>{eventData.actors.name}</p>
-                    </span> */}
-                </section>
-                <section className="EventReviews">
-                    {/* Reviews goes here */}
+                    {eventData.actors && eventData.actors.map(actor => {
+                        return (
+                            <span className="col-1" key={actor.id}>
+                                <figure>
+                                    <Link to={`/actors/${actor.id}`}><img src={actor.image} alt={actor.name} /></Link>
+                                </figure>
+                                <h4>{actor.name}</h4>
+                            </span>
+                        )
+                    })}
                 </section>
             </div>
+            <section>
+                <ReviewList event_id={event_id} />
+                <ReviewPost event_id={event_id} />
+            </section>
         </section>
     )
 }
