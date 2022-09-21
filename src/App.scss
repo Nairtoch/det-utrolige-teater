@@ -259,9 +259,157 @@ body {
 
 
 .EventDetails {
+  border: 2px solid $second;
+  margin-bottom: 8vh;
+
   img {
     width: 100%;
     border: 20px solid $second;
+    box-sizing: border-box;
+  }
+}
+
+.EventInfo {
+  margin: 1em;
+
+  .col-2 {
+    display: grid;
+    grid-template-columns: auto auto;
+
+    p {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    .EventPrice {
+      float: right;
+      
+      h2 {
+        font-weight: 100;
+        float: right;
+        padding-right: 1em;
+      }
+    }
+  }
+
+  h3 {
+    color: $first;
+    font-family: $playfair;
+    font-size: 7vh;
+    font-weight: 100;
+    margin: 0;
+  }
+
+  .Actors {
+    img {
+      width: 100%;
+      border: none;
+    }
+  }
+}
+
+
+.ActorList {
+  display: grid;
+  grid-template-columns: auto;
+  // border: 2px solid $first;
+
+  .col-1 {
+    display: grid;
+    grid-template-columns: 25% 60% 15%;
+
+    span{
+      height: fit-content;
+    }
+    
+    img {
+      width: 100%;
+      margin: 0;
+    }
+  
+    h3 {
+      text-transform: uppercase;
+      font-weight: 100;
+      margin-top: 0.4em;
+      margin-bottom: 0.5em;
+    }
+  
+    p {
+      color: $first;
+      margin-top: 0;
+      font-weight: 800;
+    }
+  
+    button {
+      margin: 0.5em;
+      padding: 1em;
+      color: white;
+      background-color: $third;
+      border: none;
+      float: right;
+      bottom: 0;
+  
+      a {
+        color: white;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.ActorDetails {
+  border: 2px solid $first;
+  margin-bottom: 4vh;
+  padding: 2em;
+
+  h1 {
+    color: $first;
+    font-family: $playfair;
+    margin-top: 0;
+    font-size: 3em;
+    font-weight: 100;
+  }
+
+  .col-2 {
+    display: grid;
+    grid-template-columns: 30% 70%;
+
+    img {
+      width: 100%;
+    }
+
+    .col-1 {
+      display: grid;
+      grid-template-columns: auto;
+      margin-left: 2em;
+
+      h3 {
+        text-transform: uppercase;
+        font-weight: 100;
+        margin: 0;
+      }
+
+      p {
+        color: $first;
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+.ActorDetailsButton {
+  button {
+    padding: 1em;
+    color: white;
+    background-color: $second;
+    border: none;
+    float: right;
+    margin-bottom: 8vh;
+
+    a {
+      color: white;
+      font-weight: 600;
+    }
   }
 }
 

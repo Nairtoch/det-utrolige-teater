@@ -7,11 +7,10 @@ import { useEffect, useState } from "react";
 
 const SearchResult = props => {
     const [searchData, setSearchData] = useState([]);
-    console.log(1234);
     
     useEffect(() => {
         const getData = async () => {
-            const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/search/{{$randomWord}}`)
+            const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/search/${props.keyword}`)
             setSearchData(result.data)
         }
         getData();

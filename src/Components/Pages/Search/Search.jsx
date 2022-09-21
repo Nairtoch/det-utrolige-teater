@@ -39,11 +39,10 @@ const Search = () => {
 
 const SearchResult = props => {
     const [searchData, setSearchData] = useState([]);
-    console.log(1234);
     
     useEffect(() => {
         const getData = async () => {
-            const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/search/{{$randomWord}}`)
+            const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/search/${props.keyword}`)
             setSearchData(result.data)
         }
         getData();
@@ -51,10 +50,10 @@ const SearchResult = props => {
 
     return (
         <>
-            <p>Found {searchData.num_items} items under <i>{props.keyword}</i></p>
-            {searchData.items && searchData.items.map(item => {
+            <p>Found {searchData.count} items under <i>{props.keyword}</i></p>
+            {searchData.items && searchData.items.map(items => {
                 return (
-                    <div key={item.id}>{item.id}. {item.name}</div>
+                    <div key={items.id}>{items.id}. {items.title}</div>
                 )
             })}
         </>
