@@ -401,6 +401,16 @@ body {
     font-weight: 100;
   }
 
+  .ReviewStars {
+    display: grid;
+    grid-template-columns: 10% 10%;
+
+    input {
+      height: 50%;
+      margin-top: 1em;
+    }
+  }
+
   .col-1 {
     display: grid;
     grid-template-columns: 90%;

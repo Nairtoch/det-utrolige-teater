@@ -1,12 +1,8 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../App/Auth/Auth";
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 
-/**
- * @param {number} Destructuring assignment of item_id from props object
- * Example of component call: <FormElement item_id={5}>
- * @returns HTML Form Element
- */
 const ReviewPost = props => {
     // Destructuring Assignment from form hooks
     const { register, handleSubmit, formState: { errors } } = useForm()
@@ -16,19 +12,22 @@ const ReviewPost = props => {
     /**
      * Function to send the form
      * @param {object} data: Object with input values 
-     * @param {object} e: Objekt with event values
+     * @param {object} e: Object with event values
      */
     const submitForm = async (data, e) => {
         // Function "options"
         const options = {
             headers: {
-                Authorization: `Bearer ${loginData.access_token}` // This is our authorization with a bearer token, 
-                                                                    // you cannot post comments without this.
+                // This is our authorization with a bearer token, you cannot post comments without this.
+                Authorization: `Bearer ${loginData.access_token}` 
             }
         }
-        const endpoint = "https://api.mediehuset.net/detutroligeteater/reviews" // Setting a variable with endpoint
-        const formData = new FormData(e.target) // Calling instanse of formdata with event target (which is the form object)
-        console.log(...formData) // Logging spread of formdata
+        // Setting a variable with endpoint
+        const endpoint = "https://api.mediehuset.net/detutroligeteater/reviews" 
+        // Calling instanse of formdata with event target (which is the form object)
+        const formData = new FormData(e.target) 
+        // Logging spread of formdata
+        console.log(...formData) 
 
         const result = await axios.post(endpoint, formData, options) // Calling API
         if (result) {
@@ -40,7 +39,10 @@ const ReviewPost = props => {
     return (
         <form onSubmit={handleSubmit(submitForm)} className="ReviewPostComment">
             <h3>Skriv en anmeldelse</h3>
-            <p>Antal stjerner:</p>
+            <div className="ReviewStars">
+                <p>Antal Stjerner:</p>
+                <input type="number" min={1} max={5} {...register("num_stars", { required: true })}></input>
+            </div>
             {/* Hidden input with id for the element to be commented on */}
             <input type="hidden" value={props.event_id} {...register("event_id")} />
             <div className="col-1">
