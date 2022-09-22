@@ -111,6 +111,7 @@ body {
   }
 }
 
+
 .HomeHighlights {
   margin-top: 8vh;
   display: grid;
@@ -174,6 +175,7 @@ body {
   }
 }
 
+
 .HomeHighlightsButton {
   button {
     padding: 1em;
@@ -188,6 +190,14 @@ body {
       font-weight: 600;
     }
   }
+}
+
+.SearchField{
+  margin: 1vh;
+}
+
+.SearchResult {
+  margin: 1vh;
 }
 
 
@@ -268,6 +278,7 @@ body {
     box-sizing: border-box;
   }
 }
+
 
 .EventInfo {
   margin: 1em;
@@ -390,6 +401,20 @@ body {
     font-weight: 100;
   }
 
+  .col-1 {
+    display: grid;
+    grid-template-columns: 90%;
+    grid-gap: 1em;
+    margin: 1em;
+    margin-left: 0;
+
+    input {
+      padding: 1em;
+      border: none;
+      border-radius: 0.2em;
+    }
+  }
+
   .col-2 {
     display: grid;
     grid-template-columns: 90% 10%;
@@ -397,7 +422,7 @@ body {
     margin: 1em;
     margin-left: 0;
 
-    input {
+    textarea {
       padding: 1em;
       border: none;
       border-radius: 0.2em;
@@ -444,6 +469,7 @@ body {
       color: $first;
       margin-top: 0;
       font-weight: 800;
+      white-space: pre-wrap;
     }
   
     button {
@@ -462,6 +488,7 @@ body {
     }
   }
 }
+
 
 .ActorDetails {
   border: 2px solid $first;
@@ -503,6 +530,7 @@ body {
     }
   }
 }
+
 
 .ActorDetailsButton {
   button {

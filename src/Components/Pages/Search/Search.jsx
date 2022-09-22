@@ -22,7 +22,7 @@ const Search = () => {
         // <> is not a mistake, it's a react fragment
         <>
             {/* A function that takes another function as an argument */}
-            <form onSubmit={handleSubmit(getSearchResult)}>
+            <form onSubmit={handleSubmit(getSearchResult)} className="SearchField">
                 <div className="SearchField">
                     {/* This is the searchbar, when you type in it it'll register what you typed, the keyword */}
                     <input type="text" id="keyword" {...register("keyword", { required: true })} placeholder="Indtast søgeord" />
@@ -50,12 +50,14 @@ const SearchResult = props => {
 
     return (
         <>
-            <p>Found {searchData.count} items under <i>{props.keyword}</i></p>
-            {searchData.items && searchData.items.map(items => {
-                return (
-                    <div key={items.id}>{items.id}. {items.title}</div>
-                )
-            })}
+            <div className="SearchResult">
+                <p>Fandt {searchData.count} resultater under <i>{props.keyword}</i></p>
+                {searchData.items && searchData.items.map(items => {
+                    return (
+                        <div key={items.id}>{items.id}. {items.title}</div>
+                    )
+                })}
+            </div>
         </>
     )
 }

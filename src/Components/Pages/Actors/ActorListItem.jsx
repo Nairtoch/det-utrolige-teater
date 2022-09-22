@@ -11,7 +11,7 @@ export const ActorListItem = props => {
                 </span>
                 <span>
                     <h3>{props.data.name}</h3>
-                    <p>{props.data.description.substring(0, 650)}...</p>
+                    <p>{props.data.description.substring(0, 475)}...</p>
                 </span>
                 <span>
                     <button className='read'><Link to={`/actors/${props.data.id}`}>LÆS MERE</Link></button>
