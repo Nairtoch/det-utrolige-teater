@@ -647,7 +647,7 @@ body {
 
 .Footer {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto 15%;
   position: relative;
   bottom: 0;
   width: 1200px;
@@ -668,6 +668,19 @@ body {
 
     span {
       padding-top: 2vh;
+    }
+  }
+
+  .footerIcons {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1em;
+    margin-top: 1.5em;
+    margin-right: 1.5em;
+
+    svg {
+      width: 100%;
+      margin: 1vh;
     }
   }
 }

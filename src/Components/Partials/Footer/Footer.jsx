@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-// import twitter from "../../../Assets/Images/square-twitter.svg";
-// import facebook from "../../../Assets/Images/square-facebook.svg";
+import Facebook from "../../../Assets/Images/Icon_Facebook.svg";
+import Instagram from "../../../Assets/Images/Icon_Instagram.svg";
+import LinkedIn from "../../../Assets/Images/Icon_LinkIn.svg";
 
 export const Footer = () => {
     return(
@@ -37,8 +38,9 @@ export const Footer = () => {
                 <p>Handelsbetingelser</p>
             </div>
             <div className='footerIcons'>
-                {/* <Link to={'/'}><img src={twitter} alt="" /></Link> */}
-                {/* <Link to={'/'}><img src={facebook} alt="" /></Link> */}
+                <Link to={'/'}><img src={Facebook} alt="" /></Link>
+                <Link to={'/'}><img src={Instagram} alt="" /></Link>
+                <Link to={'/'}><img src={LinkedIn} alt="" /></Link>
             </div>
         </footer>
     )
