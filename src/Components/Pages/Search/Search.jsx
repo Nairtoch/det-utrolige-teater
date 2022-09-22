@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaSearch } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 // Function component
 const Search = () => {
@@ -39,7 +40,7 @@ const Search = () => {
 
 const SearchResult = props => {
     const [searchData, setSearchData] = useState([]);
-    
+
     useEffect(() => {
         const getData = async () => {
             const result = await axios.get(`https://api.mediehuset.net/detutroligeteater/events/search/${props.keyword}`)
@@ -51,10 +52,14 @@ const SearchResult = props => {
     return (
         <>
             <div className="SearchResult">
-                <p>Fandt {searchData.count} resultater under <i>{props.keyword}</i></p>
+                <h3>Fandt {searchData.count} resultater under <i>{props.keyword}</i></h3>
                 {searchData.items && searchData.items.map(items => {
                     return (
-                        <div key={items.id}>{items.id}. {items.title}</div>
+                        <div key={items.id}>
+                            <h4>{items.title}</h4>
+                            <p>{items.description.substring(0, 400)}...</p>
+                            <button><Link to={`/events/${items.id}`}>LÆS MERE</Link></button>
+                        </div>
                     )
                 })}
             </div>
