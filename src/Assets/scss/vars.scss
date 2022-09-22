@@ -12,3 +12,10 @@ $third: #30454C;
 
 // Measures
 $container_width: 1200px;
+
+// Responsive
+$breakpoints: (
+    'phone': 480px,
+    'tablet': 900px,
+    'desktop': 1200px
+) !default;
