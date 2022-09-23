@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../App/Auth/Auth";
-import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 
 const ReviewPost = props => {
     // Destructuring Assignment from form hooks
